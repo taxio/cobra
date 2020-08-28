@@ -584,6 +584,10 @@ func TestStripFlags(t *testing.T) {
 			[]string{"-p", "bar"},
 			[]string{"bar"},
 		},
+		{
+			[]string{"-b", "bar", "--", "-i", "foo", "blah"},
+			[]string{"bar"},
+		},
 	}
 
 	c := &Command{Use: "c", Run: emptyRun}
